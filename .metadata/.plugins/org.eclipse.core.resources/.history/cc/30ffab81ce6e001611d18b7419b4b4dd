@@ -11,6 +11,6 @@ public class DoMath {
 		double result;
 		result = Calculate.square(5);
 		System.out.println(result);
-		}
+	}
 	
 }
