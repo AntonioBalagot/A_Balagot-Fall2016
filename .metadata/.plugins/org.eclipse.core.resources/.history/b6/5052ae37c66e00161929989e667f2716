@@ -1,0 +1,11 @@
+public class TempConvert {
+	public static void main(String[] args) {
+		//declare variables
+		int F;
+		int C;
+		
+		//compute 
+
+	}
+
+}
