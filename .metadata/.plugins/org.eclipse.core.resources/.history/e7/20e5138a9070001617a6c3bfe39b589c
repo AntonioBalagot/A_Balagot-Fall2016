@@ -44,12 +44,7 @@ public class Calculate {
 	}
 	public static String toImproperFrac(int a, int b, int c) {
 		String answer;
-		answer = ((a * c) + b + "/"  + c);
-		return answer;
-	}
-	public static String toMixedNum(int a, int b) {
-		String answer;
-		answer = (a/b) + "_" + (a%b) + "/" + b;
+		answer = (""+(a * c)+b+"/"+c+"");
 		return answer;
 	}
 	
