@@ -1,0 +1,24 @@
+/**Program called TempConvert used to convert temperatures in Fahrenheit to temperatures in Celsius 
+ * 
+ */
+
+/** 8/30/16
+ * Antonio Balagot APCS1
+ *
+ */
+public class TempConvert {
+	public double celsius
+	
+	public static void main(String[] args) {
+		//declare variables
+				int F;
+				int C;
+		//compute Celsius
+				F = 32; 
+				C = (F - 32) * (5/9);
+		//print results
+				System.out.println("Degrees Celsius:");
+				System.out.println(C);
+	}
+
+}
