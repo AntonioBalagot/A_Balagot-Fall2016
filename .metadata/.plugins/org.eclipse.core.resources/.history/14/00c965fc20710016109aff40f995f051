@@ -8,8 +8,8 @@
  */
 public class DoMath {
 	public static void main(String[] args){
-		double result;
-		result = Calculate.absValue(-7);
+		String result;
+		result = Calculate.foil(2, 3, 6, 7, "x");
 		System.out.println(result);
 		}
 	

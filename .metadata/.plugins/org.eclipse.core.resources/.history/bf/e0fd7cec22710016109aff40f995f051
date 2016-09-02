@@ -8,8 +8,8 @@
  */
 public class DoMath {
 	public static void main(String[] args){
-		double result;
-		result = Calculate.absValue(-7);
+		boolean result;
+		result = Calculate.isDivisibleBy(3, 7);
 		System.out.println(result);
 		}
 	

@@ -53,65 +53,9 @@ public class Calculate {
 		return answer;
 	}
 	public static String foil(int a, int b, int c, int d, String x) {
-		String answer;
-		answer = (a * c) + "x^2" + "+" + ((d * a) + (b * c)) + "x" + (b * d);
-		return answer;
+		 String answer;
+		 answer = (a * c) + "x^2" + "+" + ((d * a) + (b * c)) + "x" + (b * d);
+		 return answer;
 	}
-	public static boolean isDivisibleBy(int a, int b) {
-		if(a % b == 0){;
-		return true;
-		}else{
-			return false;
-		}
-	}
-	public static double absValue(double a) {
-		if(a > 0){;
-		return a;
-		}else{
-			return (a * -1);
-		}
-	}
-	public static int max(int a, int b) {
-		if(a > b){
-			return a;
-		}else{
-			return b;
-		}
-	}
-	public static double max(double a, double b, double c) {
-		if(a > b && a>c){
-			return a;
-		if(b > a && b > c){
-			return b;
-			
-		}
-		}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
-
-
-
-
-
-
-
-
-
 		
+

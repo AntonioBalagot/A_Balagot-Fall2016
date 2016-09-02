@@ -9,7 +9,7 @@
 public class DoMath {
 	public static void main(String[] args){
 		double result;
-		result = Calculate.absValue(-7);
+		result = Calculate.square(5);
 		System.out.println(result);
 		}
 	
