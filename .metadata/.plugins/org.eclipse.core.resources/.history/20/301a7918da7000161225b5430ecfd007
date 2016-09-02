@@ -62,7 +62,6 @@ public class Calculate {
 		
 	public static double absValue(double a) {
 		if (a < 0);
-		a
 		
 	}
 	}
