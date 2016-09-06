@@ -54,7 +54,7 @@ public class Calculate {
 	}
 	public static String foil(int a, int b, int c, int d, String x) {
 		String answer;
-		answer = (a * c) + "x^2 + " + ((d * a) + (b * c)) + "x"  + (b * d);
+		answer = (a * c) + "x^2" + "+" + ((d * a) + (b * c)) + "x" + (b * d);
 		return answer;
 	}
 	public static boolean isDivisibleBy(int a, int b) {
