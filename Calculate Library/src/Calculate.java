@@ -83,7 +83,7 @@ public class Calculate {
 			return a;
 		}else if(b > a && b > c){
 			return b;
-		}else if(c > a && c > b){
+		}else{
 			return c;
 		}
 	}
@@ -101,9 +101,9 @@ public class Calculate {
 		if (y >=5){
 			return (x-y+10)/1000;
 		}else{
-			return ()
+			return (x - y)/1000;
 		}
-		}
+	}}
 
 
 
