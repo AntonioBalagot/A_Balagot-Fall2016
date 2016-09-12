@@ -103,7 +103,10 @@ public class Calculate {
 		}else{
 			return (x - y)/1000;
 		}
-	}}
+	}
+	public static double exponent(double a, int b) {
+		for()
+	}
 
 
 
