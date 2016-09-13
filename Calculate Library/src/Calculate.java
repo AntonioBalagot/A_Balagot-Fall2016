@@ -105,8 +105,30 @@ public class Calculate {
 		}
 	}
 	public static double exponent(double a, int b) {
-		for()
+		int result = 1;
+		for(int i = 0; i < b; i--){
+			result*=a;
+		}
+		return result;
 	}
+	public static int factorial(int a) {
+		int x=1;
+		for(int j=a; j > 0; j--){
+			x *=a;
+		}
+		return x;
+	}
+	public static boolean isPrime(int x) {
+		boolean y = true;
+		for(int i=x; i >1; i--){
+		y = Calculate.isDivisibleBy(x, i);
+		}
+		return y;
+	}
+	public static int gcf(int a, int b) {
+		int answer = 1;
+	}
+
 
 
 

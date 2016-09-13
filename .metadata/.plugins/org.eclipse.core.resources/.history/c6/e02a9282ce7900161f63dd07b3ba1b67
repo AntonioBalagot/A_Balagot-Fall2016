@@ -54,7 +54,7 @@ public class Calculate {
 	}
 	public static String foil(int a, int b, int c, int d, String x) {
 		String answer;
-		answer = (a * c) + "x^2" + "+" + ((d * a) + (b * c)) + "x" + (b * d);
+		answer = (a * c) + "x^2 + " + ((d * a) + (b * c)) + "x"  + (b * d);
 		return answer;
 	}
 	public static boolean isDivisibleBy(int a, int b) {
@@ -81,12 +81,12 @@ public class Calculate {
 	public static double max(double a, double b, double c) {
 		if(a > b && a > c){
 			return a;
-		if(b > a && b > c){
+		}else if(b > a && b > c){
 			return b;
-		if(c > a && c > b){
+		}else{
 			return c;
 		}
-	
+	}
 
 	public static int min(int a, int b) {
 		if(a < b){
@@ -94,11 +94,18 @@ public class Calculate {
 		}else{
 			return b;
 		}
-	}
-	
-			
+	}		
 	public static double round2(double a) {
-		
+		double x=a*1000;
+		double y=x%10;
+		if (y >=5){
+			return (x-y+10)/1000;
+		}else{
+			return (x - y)/1000;
+		}
+	}
+	public static double exponent(double a, int b) {
+		for()
 	}
 
 
