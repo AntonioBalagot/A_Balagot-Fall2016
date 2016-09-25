@@ -9,8 +9,8 @@
 public class DoMath {
 	public static void main(String[] args){
 		double result;
-		result = Calculate.round2(2.3232);
+		result = Calculate.factorial(3);
 		System.out.println(result);
-		}
-	
+	}
 }
+	
