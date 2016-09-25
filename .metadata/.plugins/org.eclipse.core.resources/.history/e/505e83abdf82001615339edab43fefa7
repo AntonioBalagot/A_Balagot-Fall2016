@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+
+/**
+ * @author APCS1
+ *
+ */
+public class DoMath {
+	public static void main(String[] args){
+		String result;
+		result = Calculate.quadForm(1, -4, -5);
+		System.out.println(result);
+	}
+}
+	

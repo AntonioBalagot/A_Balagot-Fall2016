@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+
+/**
+ * @author APCS1
+ *
+ */
+public class DoMath {
+	public static void main(String[] args){
+		String result;
+		result = Calculate.foil(9, 9, 9, 9, "x");
+		System.out.println(result);
+	}
+}
+	

@@ -8,8 +8,8 @@
  */
 public class DoMath {
 	public static void main(String[] args){
-		double result;
-		result = Calculate.factorial(3);
+		String result;
+		result = Calculate.quadForm(1, -6, 8);
 		System.out.println(result);
 	}
 }

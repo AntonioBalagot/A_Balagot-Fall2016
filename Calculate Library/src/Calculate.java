@@ -55,13 +55,13 @@ public class Calculate {
 	}
 	public static String foil(int a, int b, int c, int d, String x) {
 		String answer;
-		answer = (a * c) + "x^2 + " + ((d * a) + (b * c)) + "x +  " + (b *d);
+		answer = (a * c) + "x^2 + " + ((d * a) + (b * c)) + "x + " + (b *d);
 		return answer;
 	}
 	//Part 2
 	public static boolean isDivisibleBy(int number1, int number2) {
-		if (number1 || number2 < 0) {
-			throw new IllegalArgumentException("both numbers must be greater than 0");
+		if (number1 < number2) {
+			throw new IllegalArgumentException("number1 must be greater than number2");
 		}
 		if(number1 % number2 == 0){;
 		return true;
@@ -76,7 +76,7 @@ public class Calculate {
 			return (number * -1);
 		}
 	}
-	public static int max(int number1, int number2) {
+	public static double max(double number1, double number2) {
 		if(number1 > number2){
 			return number1;
 		}else{
@@ -93,7 +93,7 @@ public class Calculate {
 		}
 	}
 
-	public static int min(int number1, int number2) {
+	public static double min(double number1, double number2) {
 		if(number1 < number2){
 			return number1;
 		}else{
@@ -110,38 +110,53 @@ public class Calculate {
 		}
 	}
 	//Part 3
-	public static double exponent(double a, int b) {
+	public static double exponent(double base, int exponent) {
+		if(exponent < 0){
+			throw new IllegalArgumentException("exponent must be greater than or equal to 0");
+		}
 		double result = 1;
-		for(int i = 0; i < b; i--){
-			result *= a;
+		for(int i = 0; i < exponent; exponent--){
+			result *= base;
 		}
 		return result;
 	}
 	public static int factorial(int number) {
 		if(number < 0) {
 			throw new IllegalArgumentException("number must be greater than or equal to 0");
+		}
 		int product = 1;
 		for (int i = 2; i<= number; i++) {
 			product = product * i;
 		}
 		return product;
-		}
+	}
 	public static boolean isPrime(int number) {
-		boolean y = true;
-		for(int i=number; i >1; i--){
-		y = Calculate.isDivisibleBy(number, i);
+		if (number < 2) {
+			return false;
 		}
-		return y;
-	}
-	public static double gcf(int num1, int num2) {
-		while(num2 != 0){
-			int num3 = num1;
-			num1 = num2;
-			num2 = num2 % num3;
+		if (number == 2) {
+			return true;
 		}
-		return (num1);
+		for(int i = 3; i < number; i++){
+			if (Calculate.isDivisibleBy(number, 2)){
+				return false;
+			}
+		}
+		return true;
 	}
+	public static double gcf(double num1, double num2) {
+		if(num1 < 0 || num2 < 0) {
+			return gcf(Calculate.absValue(num1), Calculate.absValue(num2));
+		} else if (num2 == 0) {
+			return num1;
+		} else {
+			return gcf(num2, num1 % num2);
+		}
+		}
 	public static double sqrt(double num1) {
+		if(num1 < 0) {
+			throw new IllegalArgumentException("number must be greater than or equal to 0");
+		}
 		for(double k = 0.1; k <= num1; k += 0.1){
 			double multiply = k * k;
 				if (Calculate.absValue(multiply - num1) <= .1){
@@ -150,7 +165,27 @@ public class Calculate {
 		}
 		return num1;
 	}
+	public static String quadForm(int a, int b, int c) {
+		double root1;
+		double root2;
+		double discrim = Calculate.discriminant(a, b, c);
+		if (discrim < 0) {
+			return ("no real roots");
+		}
+		if (discrim == 0) {
+			root1= (b * (-1)) / (a * 2);
+			root1= Calculate.round2(root1);
+			return ("" + root1);
+		}
+		if (discrim > 0) {
+			root1 = ((b * (-1)) + sqrt(discrim)) / (2 * a);
+			root1 = Calculate.round2(root1);
+			root2 = ((b * (-1)) - sqrt(discrim)) / (2 * a);
+			root2 = Calculate.round2(root2);
+			double min = Calculate.min(root1, root2);
+			double max = Calculate.max(root1, root2);
+			return (min + " and " + max);
+		}
+		return ("");
+	}
 }
-
-
-		
