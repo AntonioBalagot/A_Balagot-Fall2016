@@ -8,8 +8,8 @@
  */
 public class DoMath {
 	public static void main(String[] args){
-		int result;
-		result = Calculate.factorial(2);
+		double result;
+		result = Calculate.gcf(12, 3);
 		System.out.println(result);
 	}
 }

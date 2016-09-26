@@ -2,10 +2,10 @@
  * 
  */
 
-/** Program called Calculate used to solve different equations or calculate mathematical values
+/**
  * @author APCS1 Antonio Balagot
- * 8/30/16
- */ 
+ *
+ */
 public class Calculate {
 	//Part 1
 	public static double square(double number) {
