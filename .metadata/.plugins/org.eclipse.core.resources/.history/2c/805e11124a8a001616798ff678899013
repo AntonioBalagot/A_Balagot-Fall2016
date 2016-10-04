@@ -8,8 +8,8 @@
  */
 public class DoMath {
 	public static void main(String[] args){
-		String result;
-		result = Calculate.quadForm(1, -6, 8);
+		double result;
+		result = Calculate.sqrt(4);
 		System.out.println(result);
 	}
 }

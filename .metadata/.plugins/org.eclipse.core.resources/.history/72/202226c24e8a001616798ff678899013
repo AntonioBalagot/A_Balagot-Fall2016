@@ -2,19 +2,19 @@
  * 
  */
 
-/**
+/** Program called Calculate used to solve different equations or calculate mathematical values
  * @author APCS1 Antonio Balagot
- *
- */
+ * 8/30/16
+ */ 
 public class Calculate {
 	//Part 1
-	public static double square(double number) {
-		double answer;
+	public static int square(int number) {
+		int answer;
 		answer = (number * number);
 		return answer;
 	}
-	public static double cube(double number) {
-		double answer;
+	public static int cube(int number) {
+		int answer;
 		answer = (number * number * number);
 		return answer;
 	}
@@ -114,11 +114,11 @@ public class Calculate {
 		if(exponent < 0){
 			throw new IllegalArgumentException("exponent must be greater than or equal to 0");
 		}
-		double result = 1;
+		double answer = 1;
 		for(int i = 0; i < exponent; exponent--){
-			result *= base;
+			answer = answer * base;
 		}
-		return result;
+		return answer;
 	}
 	public static int factorial(int number) {
 		if(number < 0) {
@@ -157,7 +157,7 @@ public class Calculate {
 		if(num1 < 0) {
 			throw new IllegalArgumentException("number must be greater than or equal to 0");
 		}
-		for(double k = 0.1; k <= num1; k += 0.1){
+		for(double k = 0.1; k <= num1; k = k + 0.1){
 			double multiply = k * k;
 				if (Calculate.absValue(multiply - num1) <= .1){
 					return Calculate.round2(k);

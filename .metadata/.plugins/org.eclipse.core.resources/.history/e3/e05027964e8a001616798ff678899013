@@ -9,7 +9,7 @@
 public class DoMath {
 	public static void main(String[] args){
 		double result;
-		result = Calculate.gcf(12, 3);
+		result = Calculate.sqrt(81);
 		System.out.println(result);
 	}
 }
