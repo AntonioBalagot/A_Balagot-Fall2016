@@ -27,16 +27,8 @@ public class Magpie2 {
 			response = "She sounds like a nice person.";
 		} else if (statement.indexOf("Mr") >= 0) {
 			response = "He sounds like a good teacher.";
-		} else if (statement.indexOf("sorry") >= 0) {
-			response = "It's fine. I forgive you. :)";
-		} else if (statement.indexOf("food") >= 0) {
-			response = "I love chicken and rice. It's my favorite food.";
-		} else if (statement.indexOf("weather") >= 0) {
-			response = "It's sunny as long as you're here.";
-		} else if (statement.indexOf("Giants") >= 0
-				|| statement.indexOf("49ers") >= 0
-				|| statement.indexOf("Warriors") >= 0) {
-			response = "Are they going to win their next game?";
+		
+			
 			
 		} else {
 			response = getRandomResponse();
@@ -62,12 +54,6 @@ public class Magpie2 {
 			response = "Do you really think so?";
 		} else if (whichResponse == 3) {
 			response = "You don't say.";
-		} else if (whichResponse == 4) {
-			response = "I don't like that.";
-		} else if (whichResponse == 5) {
-			response = "Oh, ok.";
-		} else if (whichResponse == 6) {
-			response = "Whatever.";
 		}
 
 		return response;
