@@ -36,7 +36,7 @@ public class Magpie2 {
 		} else if (statement.indexOf("Giants") >= 0
 				|| statement.indexOf("49ers") >= 0
 				|| statement.indexOf("Warriors") >= 0) {
-			response = "Are they going to win their next game?";
+			response = "I bet they'll win their next game.";
 			
 		} else {
 			response = getRandomResponse();
