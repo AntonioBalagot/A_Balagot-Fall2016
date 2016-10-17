@@ -12,7 +12,7 @@ public class Magpie2 {
 	 * returns a response based on given rules
 	 */
 	public String getResponse(String statement) {
-		String response = "";
+		String response = "";{
 		if (statement.indexOf("no") >= 0) {
 			response = "Why so negative?";
 		} else if (statement.indexOf("mother") >= 0
@@ -37,11 +37,14 @@ public class Magpie2 {
 				|| statement.indexOf("49ers") >= 0
 				|| statement.indexOf("Warriors") >= 0) {
 			response = "I bet they'll win their next game.";
+		} else if (statement.trim().length() < 1) {
+			response = "Say something please.";
 			
 		} else {
 			response = getRandomResponse();
 		}
 		return response;
+	}
 	}
 
 	/**
