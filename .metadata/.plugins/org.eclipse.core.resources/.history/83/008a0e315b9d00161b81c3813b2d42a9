@@ -66,10 +66,13 @@ public class Magpie4 {
 				response = "Say something please.";
 			} else {
 				response = getRandomResponse();
-	// Responses which require transformations
-			} if (findKeyword(statement, "I want to", 0) >= 0) {
+			}
+	
+			// Responses which require transformations
+					} if (findKeyword(statement, "I want to", 0) >= 0) {
 				response = transformIWantToStatement(statement);
 			}
+
 			else {
 				// Look for a two word (you <something> me)
 				// pattern
@@ -81,7 +84,7 @@ public class Magpie4 {
 					response = getRandomResponse();
 				}
 			}
-			return response;}
+			return response;
 		}
 
 		/**

@@ -31,45 +31,48 @@ public class Magpie4 {
 		 * response based on the rules given
 		 */
 	public String getResponse(String statement) {
-		String response = "";{
-			if (findKeyword(statement,"no") >= 0) {
-				response = "Why so negative?";
-			} else if (findKeyword(statement,"mother") >= 0
-					|| findKeyword(statement,"father") >= 0
-					|| findKeyword(statement,"sister") >= 0
-					|| findKeyword(statement,"brother") >= 0) {
-				response = "Tell me more about your family.";
-			} else if (findKeyword(statement,"teacher") >= 0) {
-					response = "I like that teacher.";
-			} else if (findKeyword(statement,"Mrs") >= 0
-					|| findKeyword(statement,"Dreyer") >= 0
-					|| findKeyword(statement,"Alberta") >=0
-					|| findKeyword(statement,"Louie") >=0
-					|| findKeyword(statement,"Arge") >=0
-					|| findKeyword(statement,"Ms") >= 0) {
-				response = "She sounds like a nice person.";
-			} else if (findKeyword(statement,"Mr") >= 0
-					|| findKeyword(statement,"Headley") >= 0
-					|| findKeyword(statement,"Latham") >=0) {
-				response = "He sounds like a good teacher.";
-			} else if (findKeyword(statement,"sorry") >= 0) {
-				response = "It's fine. I forgive you. :)";
-			} else if (findKeyword(statement,"food") >= 0) {
-				response = "I love chicken and rice. It's my favorite food.";
-			} else if (findKeyword(statement,"weather") >= 0) {
-				response = "It's sunny as long as you're here.";
-			} else if (findKeyword(statement,"Giants") >= 0
-					|| findKeyword(statement,"49ers") >= 0
-					|| findKeyword(statement,"Warriors") >= 0) {
-				response = "I bet they'll win their next game.";
-			} else if (statement.trim().length() < 1) {
-				response = "Say something please.";
-			} else {
-				response = getRandomResponse();
-	// Responses which require transformations
-			} if (findKeyword(statement, "I want to", 0) >= 0) {
+				String response = "";{
+					if (findKeyword(statement,"no") >= 0) {
+						response = "Why so negative?";
+					} else if (findKeyword(statement,"mother") >= 0
+							|| findKeyword(statement,"father") >= 0
+							|| findKeyword(statement,"sister") >= 0
+							|| findKeyword(statement,"brother") >= 0) {
+						response = "Tell me more about your family.";
+					} else if (findKeyword(statement,"teacher") >= 0) {
+							response = "I like that teacher.";
+					} else if (findKeyword(statement,"Mrs") >= 0
+							|| findKeyword(statement,"Dreyer") >= 0
+							|| findKeyword(statement,"Alberta") >=0
+							|| findKeyword(statement,"Louie") >=0
+							|| findKeyword(statement,"Arge") >=0
+							|| findKeyword(statement,"Ms") >= 0) {
+						response = "She sounds like a nice person.";
+					} else if (findKeyword(statement,"Mr") >= 0
+							|| findKeyword(statement,"Headley") >= 0
+							|| findKeyword(statement,"Latham") >=0) {
+						response = "He sounds like a good teacher.";
+					} else if (findKeyword(statement,"sorry") >= 0) {
+						response = "It's fine. I forgive you. :)";
+					} else if (findKeyword(statement,"food") >= 0) {
+						response = "I love chicken and rice. It's my favorite food.";
+					} else if (findKeyword(statement,"weather") >= 0) {
+						response = "It's sunny as long as you're here.";
+					} else if (findKeyword(statement,"Giants") >= 0
+							|| findKeyword(statement,"49ers") >= 0
+							|| findKeyword(statement,"Warriors") >= 0) {
+						response = "I bet they'll win their next game.";
+					} else if (statement.trim().length() < 1) {
+						response = "Say something please.";
+					} else {
+						response = getRandomResponse();
+					}
+	
+			// Responses which require transformations
+					} if (findKeyword(statement, "I want to", 0) >= 0) {
 				response = transformIWantToStatement(statement);
 			}
+
 			else {
 				// Look for a two word (you <something> me)
 				// pattern
@@ -81,7 +84,7 @@ public class Magpie4 {
 					response = getRandomResponse();
 				}
 			}
-			return response;}
+			return response;
 		}
 
 		/**
