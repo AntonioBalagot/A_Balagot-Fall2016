@@ -8,7 +8,10 @@
  *
  */
 public class Magpie4 {
+		
 		//Get a default greeting and return a greeting
+	public static void main (String[] args) {
+	}
 	public String getGreeting() {
 			return "Hello, let's talk.";
 		}
