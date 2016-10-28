@@ -28,38 +28,31 @@ public class Split
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-	String bread;	
+		
 	bread =("applespineapplesbreadlettucetomatobaconmayohambreadcheese");
 	public static void bread(String string){
-		String[] ingredients = string.split("bread");
-		int piecesOfBread = 0;
-		//For checking if bread is part of the sandwich
-		String isThereBread;
-		//Sandwich with nothing in it
-		String nothingSandwich;
-		while(isThereBread.indexOf("bread") !=-1){
-			int check = isThereBread.indexOf("bread");
-			isThereBread = isThereBread.substring(check + 4);
-			piecesOfBread++;
-		}
-		if(ingredients.length >3){
-			for(int i=1; i <ingredients.length; i++){
-				System.out.println(ingredients[i - 1]);
-			if(piecesOfBread < 2){
-				System.out.println("This is not a sandwich");
-			}else if(nothingSandwich.equals("")){
-				System.out.println("This is not a sandwich");
-			}else if(piecesOfBread < 2){
-				System.out.println("This is not a sandwich");
-			}else if (ingredients.length < 2){
-				System.out.println("This is not a sandwich");
-			}else{
-				System.out.println(ingredients[1]);
+		String[] parts = string.split("bread");
+		if(parts.length >3){
+			for(int i=0; i <parts.length-2; i++){
+				System.out.println(parts[1 + i]);
+			}
+		}else{
+			System.out.println(parts[1]);
 			}
 		}
-		}
+	
+		
+	
+	if(piecesOfBread <= 1){
+		System.out.println("Not a Sandwich");
+	}else{if(nothing between bread){
+			System.out.println("Not a Sandwich");
+			}else{ String[] parts = string.split("bread");
+			if(parts.length >3){
+				for(int i=0; i <parts.length-2; i++){
+					System.out.println(parts[1 + i]);
 	}
-}
+	}
 		//Your task pt 2:
 		/*Write a method that take in a string like "apples pineapples bread lettuce tomato bacon mayo ham bread cheese" describing a sandwich
 		 * use String.split to split up the sandwich at the spaces, " ", and return what's in the middle of the sandwich and ignores what's on the outside
@@ -69,3 +62,16 @@ public class Split
 
 
 
+//public static void splitBread(String statement){
+//	int counter = 0;
+//	int piecesofbread = 0;
+//	String search = "bread";
+//	String[] bread = statement.split("bread");
+//if(statement.length == 2){
+//String breadMiddleStatement = bread[1];
+//System.out.println("The things between the two pieces of bread are " + breadMiddleStatement);
+//}
+//if(statement.length == 3){
+//String breadMiddleStatement1 = bread[1];
+//System.out.println("The things between the pieces of bread are " + breadMiddleStatement1);
+//}
