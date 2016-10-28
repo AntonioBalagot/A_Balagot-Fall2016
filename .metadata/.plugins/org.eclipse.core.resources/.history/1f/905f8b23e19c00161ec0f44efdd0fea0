@@ -30,7 +30,7 @@ public class Magpie4 {
 		 * takes in user statement
 		 * response based on the rules given
 		 */
-	public String getResponse(String statement) {
+		public String getResponse(String statement) {
 				String response = "";{
 					if (findKeyword(statement,"no") >= 0) {
 						response = "Why so negative?";
@@ -64,6 +64,7 @@ public class Magpie4 {
 						response = "I bet they'll win their next game.";
 					} else if (statement.trim().length() < 1) {
 						response = "Say something please.";
+						
 					} else {
 						response = getRandomResponse();
 					}
