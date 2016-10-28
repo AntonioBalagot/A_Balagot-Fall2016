@@ -28,9 +28,9 @@ public class Split
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-	String bread;	
-	bread =("applespineapplesbreadlettucetomatobaconmayohambreadcheese");
+	
 	public static void bread(String string){
+		String everything= ("applespineapplesbreadlettucetomatobaconmayohambreadcheese");
 		String[] ingredients = string.split("bread");
 		int piecesOfBread = 0;
 		//For checking if bread is part of the sandwich
@@ -59,13 +59,42 @@ public class Split
 		}
 		}
 	}
-}
+
 		//Your task pt 2:
 		/*Write a method that take in a string like "apples pineapples bread lettuce tomato bacon mayo ham bread cheese" describing a sandwich
 		 * use String.split to split up the sandwich at the spaces, " ", and return what's in the middle of the sandwich and ignores what's on the outside
 		 * Again, what if it's a fancy sandwich with multiple pieces of bread?
 		*/
 
-
+public static void bread2(String string){
+	String[] ingredients = string.split("bread");
+	int piecesOfBread = 0;
+	//For checking if bread is part of the sandwich
+	String isThereBread;
+	//Sandwich with nothing in it
+	String nothingSandwich;
+	while(isThereBread.indexOf("bread") !=-1){
+		int check = isThereBread.indexOf("bread");
+		isThereBread = isThereBread.substring(check + 4);
+		piecesOfBread++;
+	}
+	if(ingredients.length >3){
+		for(int i=1; i <ingredients.length; i++){
+			System.out.println(ingredients[i - 1]);
+		if(piecesOfBread < 2){
+			System.out.println("This is not a sandwich");
+		}else if(nothingSandwich.equals("")){
+			System.out.println("This is not a sandwich");
+		}else if(piecesOfBread < 2){
+			System.out.println("This is not a sandwich");
+		}else if (ingredients.length < 2){
+			System.out.println("This is not a sandwich");
+		}else{
+			System.out.println(ingredients[1]);
+		}
+	}
+	}
+}
+}
 
 
