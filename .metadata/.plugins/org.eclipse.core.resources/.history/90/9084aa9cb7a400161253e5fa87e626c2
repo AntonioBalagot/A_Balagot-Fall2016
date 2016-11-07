@@ -25,12 +25,10 @@ public class ArraysLab3 {
 	//that consists of the elements of arr with num appended to the end.
 	public static int[] append(int[] arr, int num) {
 		assert (arr.length > 0);
-		int[] newArr = new int [arr.length + 1];
-		for(int i = 0; i < arr.length; i++){
-			newArr[i] = arr[i];
-		}
-		newArr[arr.length] = num;
-		return(newArr);
+		arr.length= arr.length + 1;
+		num = arr[arr.length - 1];
+		return(arr);
+		
 	}
 	
 	//Method called remove used to return an array of integers consisting of 

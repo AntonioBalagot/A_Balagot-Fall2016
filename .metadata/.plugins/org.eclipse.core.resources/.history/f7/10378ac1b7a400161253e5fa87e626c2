@@ -26,10 +26,10 @@ public class ArraysLab3 {
 	public static int[] append(int[] arr, int num) {
 		assert (arr.length > 0);
 		int[] newArr = new int [arr.length + 1];
-		for(int i = 0; i < arr.length; i++){
+		for(int i = 0; i <arr.length; i++){
 			newArr[i] = arr[i];
 		}
-		newArr[arr.length] = num;
+		num = newArr[newArr.length - 1];
 		return(newArr);
 	}
 	
