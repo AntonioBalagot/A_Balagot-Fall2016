@@ -6,6 +6,8 @@ public class FracCalc {
     	Scanner userInput = new Scanner(System.in);
         // TODO: Read the input from the user and call produceAnswer with an equation
 
+    	
+    	System.out.println(result returned by produceAnswer);
     }
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
