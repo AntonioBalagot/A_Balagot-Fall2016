@@ -1,0 +1,73 @@
+package fracCalc;
+import java.util.*;
+public class FracCalc {
+	
+	//main reads input from the user and calls produceAnswer with an equation
+    public static void main(String[] args) {
+    	Scanner userInput = new Scanner(System.in);
+    	System.out.println("Enter a number, or enter 'quit' to quit the program");
+    	String equation=userInput.nextLine();
+    	while (equation.indexOf("quit")<0){
+    	   System.out.println(produceAnswer(equation));
+    	   System.out.println("Please enter a new number, or enter 'quit' to quit the program");
+    	   		equation=userInput.nextLine();
+    	}
+    	    		
+    }
+
+    public static boolean isDivisibleBy(int number1, int number2) {
+		if (number1 < number2) {
+			throw new IllegalArgumentException("number1 must be greater than number2");
+		}
+		if(number1 % number2 == 0){;
+		return true;
+		}else{
+			return false;
+		}
+	}
+    
+    public static boolean isPrime(int number) {
+		if (number < 2) {
+			return false;
+		}
+		if (number == 2) {
+			return true;
+		}
+		for(int i = 3; i < number; i++){
+			if (isDivisibleBy(number, 2)){
+				return false;
+			}
+		}
+		return true;
+	}
+    public static double gcf(double num1, double num2) {
+		if(num1 < 0 || num2 < 0) {
+			return gcf((num1 * -1), (num2 * -1));
+		}if(num2 == 0) {
+			return num1;
+		} else {
+			return gcf(num2, num1 % num2);
+		}
+	}
+    	   
+    
+    
+    
+    // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
+    // This function takes a String 'input' and produces the result
+    //
+    // input is a fraction string that needs to be evaluated.  For your program, this will be the user input.
+    //      e.g. input ==> "1/2 + 3/4"
+    //        
+    // The function should return the result of the fraction after it has been calculated
+    //      e.g. return ==> "1_1/4"
+    public static String produceAnswer(String input) {
+    	
+        // TODO: Implement this function to produce the solution to the input
+        
+        return "";
+    }
+
+    // TODO: Fill in the space below with any helper methods that you think you will need
+    
+}
