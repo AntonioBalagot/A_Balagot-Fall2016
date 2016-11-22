@@ -67,49 +67,57 @@ public class FracCalc {
     //Finally it returns a string that describes each component of the second operator.
     //Part 3:
     public static String produceAnswer(String expression) {
+    	int wholeNum=0;
+    	int numerator=0;
+    	int denominator=0;
+    	int firstWholeNum=0;
+    	int secondWholeNum=0;
+    	int firstNumerator=0;
+    	int firstDenominator=0;
+    	int secondNumerator=0;
+    	int secondDenominator=0;
     	String[] split=expression.split(" ");
         String firstOperand=split[0];
         String operator=split[1];
         String secondOperand=split[2];
-        int firstWholeNumber=0;
-    	int secondWholeNumber=0;
-    	int firstNumerator=0;
-    	int firstDenominator=0;
         if (firstOperand.indexOf("_")>=0){
-        	String[] separatedOperand1=firstOperand.split("_");
-        	firstWholeNumber=Integer.parseInt(separatedOperand1[0]);
-        	String firstFrac=separatedOperand1[1];
-        	String[] separatedFraction1=firstFrac.split("/");
-        	firstNumerator=Integer.parseInt(separatedFraction1[0]);
-        	firstDenominator=Integer.parseInt(separatedFraction1[1]);
+        	String[] firstOperandSeparated=firstOperand.split("_");
+        	firstWholeNum=Integer.parseInt(firstOperandSeparated[0]);
+        	String firstFrac=firstOperandSeparated[1];
+        	String[] firstFracSeparated=firstFrac.split("/");
+        	firstNumerator=Integer.parseInt(firstFracSeparated[0]);
+        	firstDenominator=Integer.parseInt(firstFracSeparated[1]);
         }else if(firstOperand.indexOf("/")>=0){
-        	String[] separatedFraction1=firstOperand.split("/");
-        	firstNumerator=Integer.parseInt(separatedFraction1[0]);
-        	firstDenominator=Integer.parseInt(separatedFraction1[1]);
+        	String[] firstFracSeparated=firstOperand.split("/");
+        	firstNumerator=Integer.parseInt(firstFracSeparated[0]);
+        	firstDenominator=Integer.parseInt(firstFracSeparated[1]);
         }else{
-        	firstWholeNumber=Integer.parseInt(firstOperand);
+        	firstWholeNum=Integer.parseInt(firstOperand);
         	firstDenominator=1;
         }
-        int secondNumerator=0;
-    	int secondDenominator=0;
         if (secondOperand.indexOf("_")>=0){
-        	String[] separatedOperand2=secondOperand.split("_");
-        	secondWholeNumber=Integer.parseInt(separatedOperand2[0]);
-        	String secondFrac=separatedOperand2[1];
-        	String[] separatedFraction2=secondFrac.split("/");
-        	secondNumerator=Integer.parseInt(separatedFraction2[0]);
-        	secondDenominator=Integer.parseInt(separatedFraction2[1]);
+        	String[] secondOperandSeparated=secondOperand.split("_");
+        	secondWholeNum=Integer.parseInt(secondOperandSeparated[0]);
+        	String secondFrac=secondOperandSeparated[1];
+        	String[] secondFracSeparated=secondFrac.split("/");
+        	secondNumerator=Integer.parseInt(secondFracSeparated[0]);
+        	secondDenominator=Integer.parseInt(secondFracSeparated[1]);
         }else if(secondOperand.indexOf("/")>=0){
-        	String[] separatedFraction2=secondOperand.split("/");
-        	secondNumerator=Integer.parseInt(separatedFraction2[0]);
-        	secondDenominator=Integer.parseInt(separatedFraction2[1]);
+        	String[] secondFracSeparated=secondOperand.split("/");
+        	secondNumerator=Integer.parseInt(secondFracSeparated[0]);
+        	secondDenominator=Integer.parseInt(secondFracSeparated[1]);
         }else{
-        	secondWholeNumber=Integer.parseInt(secondOperand);
+        	secondWholeNum=Integer.parseInt(secondOperand);
         	secondDenominator=1;
         }
-        return "whole:" + secondWholeNumber + " numerator:" + secondNumerator + " denominator:" + secondDenominator;
-        
+        return "whole:" + secondWholeNum + " numerator:" + secondNumerator 
+        			+ " denominator:" + secondDenominator;
+		
+       
+    }
         // TODO: Implement this function to produce the solution to the input
+        
+        return "";
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need

@@ -21,7 +21,6 @@ public class Split
 	public static String splitSandwich(String string){
 		String[] ingredients = string.split(" ");
 		int piecesOfBread = 0;
-		String singleIngredient = "";
 		//For checking if bread is part of the sandwich
 		String isThereBread = (" ");
 		while(isThereBread.indexOf("bread") !=-1){
@@ -40,20 +39,8 @@ public class Split
 			}else if (ingredients.length < 2){
 				System.out.println("This is not a sandwich");
 			}else{
-				int firstBread=string.indexOf("bread") + 5;
-				String lastBread = string.substring(firstBread);
-				String Ingredients=lastBread.substring(0, lastBread.lastIndexOf("bread"));
-				if(Ingredients.indexOf("bread")>=0){
-					String[] sandwich = Ingredients.split("bread");
-						if(sandwich.length==0){
-							System.out.println("This is not  sandwich.");
-						}else{
-							for(String part:sandwich){
-								singleIngredient= singleIngredient + part;
-							}
 				System.out.println(ingredients[1]);
 			}
-				}}
 		return(Arrays.toString(ingredients));
 		}
 
