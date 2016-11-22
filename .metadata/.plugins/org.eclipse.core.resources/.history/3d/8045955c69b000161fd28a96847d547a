@@ -5,11 +5,11 @@ public class FracCalc {
 	//main reads input from the user and calls produceAnswer with an equation
     public static void main(String[] args) {
     	Scanner userInput = new Scanner(System.in);
-    	System.out.println("Enter a whole or mixed number, or enter 'quit' to quit the program");
+    	System.out.println("Enter a number, or enter 'quit' to quit the program");
     	String equation=userInput.nextLine();
     	while (equation.indexOf("quit")<0){
     	   System.out.println(produceAnswer(equation));
-    	   System.out.println("Enter a new whole or mixed number, or enter 'quit' to quit the program");
+    	   System.out.println("Please enter a new number, or enter 'quit' to quit the program");
     	   		equation=userInput.nextLine();
     	}
     	    		
@@ -113,7 +113,25 @@ public class FracCalc {
         return "whole:" + secondWholeNum + " numerator:" + secondNumerator 
         			+ " denominator:" + secondDenominator;
 		
-       
+        /*if (operator.indexOf("+")>=0){
+			wholeNum=firstWholeNum+secondWholeNum;
+			numerator=firstNumerator*secondDenominator+secondNumerator*firstDenominator;
+			denominator=firstDenominator*secondDenominator;
+			if (numerator%denominator==0){
+				wholeNum=wholeNum+numerator/denominator;
+			}else if(numerator>denominator){
+				wholeNum++;
+				numerator=numerator-denominator;
+			}else{
+				int gcf=gcf(numerator, denominator);
+				numerator=numerator/gcf;
+			}*/
+			
+			//return "" + wholeNum
+        //}else if (operator.indexOf("-")>=0){
+        //}else if (operator.indexOf("+")>=0){	
+        //}else{
+        	
     }
         // TODO: Implement this function to produce the solution to the input
         

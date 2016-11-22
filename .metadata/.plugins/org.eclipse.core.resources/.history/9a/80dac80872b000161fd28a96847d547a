@@ -64,7 +64,7 @@ public class Magpie4 {
 				int psn2 = findKeyword(statement, "I",0);
 				if (psn >= 0 && findKeyword(statement, "me", psn) >= 0) {
 					response = transformYouMeStatement(statement);
-				}else if(psn2 >= 0 && findKeyword(statement, "you",psn) >=0){
+				}else if(psn2 >= 0 && findKeyword(statement, "me",psn) >=0){
 					response = transformIYouStatement(statement);
 				} else {
 					response = getRandomResponse();
@@ -132,7 +132,7 @@ public class Magpie4 {
 		private String transformIYouStatement(String statement){
 			statement=statement.trim();
 			String lastChar = statement.substring(statement.length() - 1);
-			if (lastChar.equalsIgnoreCase(".")){
+			if (lastChar.equals(".")){
 				statement = statement.substring(0,  statement.length() - 1);
 			}
 			int psnOfI = findKeyword(statement, "I", 0);
