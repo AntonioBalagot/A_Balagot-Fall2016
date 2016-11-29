@@ -5,11 +5,11 @@ public class FracCalc {
 	//main reads input from the user and calls produceAnswer with an equation
     public static void main(String[] args) {
     	Scanner userInput = new Scanner(System.in);
-    	System.out.println("Enter a whole or mixed number, or enter 'quit' to quit the program");
+    	System.out.println("Enter a whole or mixed number, or enter 'quit' to exit the program");
     	String equation=userInput.nextLine();
     	while (equation.indexOf("quit")<0){
     	   System.out.println(produceAnswer(equation));
-    	   System.out.println("Enter a new whole or mixed number, or enter 'quit' to quit the program");
+    	   System.out.println("Enter a new whole or mixed number, or enter 'quit' to exit the program");
     	   		equation=userInput.nextLine();
     	}
     	    		
@@ -20,6 +20,13 @@ public class FracCalc {
 		answer = ((wholenum * denominator) + numerator + "/"  + denominator);
 		return answer;
 	}
+    
+    public static String toMixedNum(int numerator, int denominator) {
+		String answer;
+		answer = (numerator/denominator) + "_" + (numerator%denominator) + "/" + denominator;
+		return answer;
+    }
+    
     public static boolean isDivisibleBy(int number1, int number2) {
 		if (number1 < number2) {
 			throw new IllegalArgumentException("number1 must be greater than number2");
@@ -116,7 +123,15 @@ public class FracCalc {
         
         // TODO: Implement this function to produce the solution to the input
     }
-
-    // TODO: Fill in the space below with any helper methods that you think you will need
+    public static String add {
+    	
+    public static String subtract {
+    	
+    public static String multiply {
+    	
+    public static String divide {
+    }
+    }
+    }
     
 }
