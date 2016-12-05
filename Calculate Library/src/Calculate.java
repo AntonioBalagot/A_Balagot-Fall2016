@@ -81,7 +81,7 @@ public class Calculate {
 		if (number1 < number2) {
 			throw new IllegalArgumentException("number1 must be greater than number2");
 		}
-		if(number1 % number2 == 0){;
+		if(number1 % number2 == 0){
 		return true;
 		}else{
 			return false;

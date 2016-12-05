@@ -14,6 +14,46 @@ public class FracCalc {
     	}    		
     }
 
+  
+    
+    public static boolean isDivisibleBy(int number1, int number2) {
+		if (number1 < number2) {
+			throw new IllegalArgumentException("number1 must be greater than number2");
+		}
+		if(number1 % number2 == 0){;
+		return true;
+		}else{
+			return false;
+		}
+	}
+    
+    public static boolean isPrime(int number) {
+		if (number < 2) {
+			return false;
+		}
+		if (number == 2) {
+			return true;
+		}
+		for(int i = 3; i < number; i++){
+			if (isDivisibleBy(number, 2)){
+				return false;
+			}
+		}
+		return true;
+	}
+    public static double gcf(double num1, double num2) {
+		if(num1 < 0 || num2 < 0) {
+			return gcf((num1 * -1), (num2 * -1));
+		}if(num2 == 0) {
+			return num1;
+		} else {
+			return gcf(num2, num1 % num2);
+		}
+	}
+    	   
+    
+    
+    
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
     // This function takes a String 'input' and produces the result
     //
@@ -28,21 +68,6 @@ public class FracCalc {
     //Finally it returns a string that describes each component of the second operator.
     //Part 3:
     public static String produceAnswer(String expression) {
-    	String[] splitString=expression.split(" ");
-    	String firstOperand=splitString[0];
-    	String secondOperand=splitString[2];
-    	parseOperand(firstOperand);
-    	parseOperand(secondOperand);
-    	int wholeNum=0;
-    	int numerator=0;
-    	int denominator=0;
-    	int firstWholeNum=0;
-    	int secondWholeNum=0;
-    	int firstNumerator=0;
-    	int firstDenominator=0;
-    	int secondNumerator=0;
-    	int secondDenominator=0;
-    	String operator=splitString[1];
     	
         // TODO: Implement this function to produce the solution to the input
     }
