@@ -75,7 +75,7 @@ public class FracCalc {
          	firstWholeNumber=Integer.parseInt(firstOperand);
          	firstDenominator=1;
          }
-        int secondNumerator=0;
+         int secondNumerator=0;
      	int secondDenominator=0;
          if (secondOperand.indexOf("_")>=0){
          	String[] separatedOperand2=secondOperand.split("_");
@@ -108,17 +108,7 @@ public class FracCalc {
     	return(addNumerator + "/" + addDenominator);
     }
     	
-    public static String subtractFrac(int[] firstOperand , int[] secondOperand){
-    	int subtractNumerator=0;
-    	int subtractDenominator=0;
-    	if(firstOperand[1] == secondOperand[1]){
-    		subtractNumerator=firstOperand[0] - secondOperand[0];
-    	}else{
-    		subtractNumerator = (firstOperand[0] * secondOperand[1]) - (secondOperand[0] * firstOperand[1]);
-    		subtractDenominator=firstOperand[1] * secondOperand[1];
-    	}
-    	return(subtractNumerator + "/" + subtractDenominator);
-    }
+    
     	
     public static String multiplyFrac(int[] firstOperand , int[] secondOperand){
     	int toMultiplyNumerator=0;
