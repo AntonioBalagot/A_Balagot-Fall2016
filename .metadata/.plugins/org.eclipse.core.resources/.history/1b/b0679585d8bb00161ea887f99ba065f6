@@ -1,8 +1,3 @@
-// FracCalc-Fractional Calculator
-// Antonio Balagot
-// APCS1
-// 12/9/16
-
 package fracCalc;
 import java.util.*;
 public class FracCalc {
@@ -16,8 +11,7 @@ public class FracCalc {
     	   System.out.println(produceAnswer(equation));
     	   System.out.println("Enter a new whole or mixed number, or type 'quit' to exit the program");
     	   		equation=userInput.nextLine();
-    	}    
-    	userInput.close();
+    	}    		
     }
 
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -39,37 +33,33 @@ public class FracCalc {
     	String secondOperand=splitString[2];
     	parseOperand(firstOperand);
     	parseOperand(secondOperand);
-    	String operator=splitString[1];
-    	String calculation = "";
-    	if(operator.equals("+")){
-    		calculation=addFrac(parseOperand(firstOperand), parseOperand(secondOperand));
-    	}else if(operator.equals("-")){
-    		calculation=subtractFrac(parseOperand(firstOperand), parseOperand(secondOperand));
-    	}else if(operator.equals("*")){
-    		calculation=multiplyFrac(parseOperand(firstOperand), parseOperand(secondOperand));
-    	}else if(operator.equals("/")){
-    		calculation=divideFrac(parseOperand(firstOperand), parseOperand(secondOperand));
-    	}
-    	return(calculation);
-    }
-    
-    public static int[] parseOperand(String expression){
-    	int[] splitOperand=new int[3];
-    	int wholeNumber=splitOperand[0];
-    	int numerator=splitOperand[1];
-    	int denominator=splitOperand[2];
-    	String[] split=expression.split(" ");
-        String firstOperand=split[0];
-        String secondOperand=split[2];
+    	int wholeNum=0;
+    	int numerator=0;
+    	int denominator=0;
     	int firstWholeNum=0;
     	int secondWholeNum=0;
     	int firstNumerator=0;
     	int firstDenominator=0;
+    	int secondNumerator=0;
+    	int secondDenominator=0;
+    	String operator=splitString[1];
+    	
+        // TODO: Implement this function to produce the solution to the input
+    }
+    
+    public static int[] parseOperand(String expression){
+    	String[] split=expression.split(" ");
+        String firstOperand=split[0];
+        String secondOperand=split[2];
         int firstWholeNumber=0;
     	int secondWholeNumber=0;
+    	int firstNumerator=0;
+    	int firstDenominator=0;
     	String operator=split[1];
     	int[] operandSplit=new int[3];
     	int wholeNum=operandSplit[0];
+    	int numerator=operandSplit[1];
+    	int denominator=operandSplit[2];
     	 if (firstOperand.indexOf("_")>=0){
          	String[] separatedOperand1=firstOperand.split("_");
          	firstWholeNumber=Integer.parseInt(separatedOperand1[0]);
@@ -100,11 +90,10 @@ public class FracCalc {
          	secondDenominator=Integer.parseInt(separatedFraction2[1]);
          }else{
         	secondWholeNumber=Integer.parseInt(secondOperand);
-           	secondDenominator=1;
+          	secondDenominator=1;
           }
-         return(improperFrac)
-           return "whole:" + secondWholeNumber + " numerator:" + secondNumerator + " denominator:" + secondDenominator;
-           
+          return "whole:" + secondWholeNumber + " numerator:" + secondNumerator + " denominator:" + secondDenominator;
+          
          }
          	
     public static String addFrac(int[] firstOperand , int[]secondOperand){
@@ -162,18 +151,5 @@ public class FracCalc {
   		answer = (numerator/denominator) + "_" + (numerator%denominator) + "/" + denominator;
   		return answer;
       }
-      
-      public static boolean isDivisibleBy(int number1, int number2) {
-  		if (number1 < number2) {
-  			throw new IllegalArgumentException("number1 must be greater than number2");
-  		}
-  		if(number1 % number2 == 0){
-  		return true;
-  		}else{
-  			return false;
-  		}
-  		
-  		
-  	}
 }
   
