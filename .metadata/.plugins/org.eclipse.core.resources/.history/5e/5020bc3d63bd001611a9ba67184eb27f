@@ -34,12 +34,12 @@ public class FracCalc {
     //Finally it returns a string that describes each component of the second operator.
     //Part 3:
     public static String produceAnswer(String expression) {
-    	String[] splitExpression=expression.split(" ");
-    	String firstOperand=splitExpression[0];
-    	String operator=splitExpression[1];
-    	String secondOperand=splitExpression[2];
+    	String[] splitString=expression.split(" ");
+    	String firstOperand=splitString[0];
+    	String secondOperand=splitString[2];
     	parseOperand(firstOperand);
     	parseOperand(secondOperand);
+    	String operator=splitString[1];
     	String calculation = "";
     	if(operator.equals("+")){
     		calculation=addFrac(parseOperand(firstOperand), parseOperand(secondOperand));
@@ -85,8 +85,8 @@ public class FracCalc {
          	firstWholeNumber=Integer.parseInt(firstOperand);
          	firstDenominator=1;
          }
-    	 int secondNumerator=0;
-      	 int secondDenominator=0;
+        int secondNumerator=0;
+     	int secondDenominator=0;
          if (secondOperand.indexOf("_")>=0){
          	String[] separatedOperand2=secondOperand.split("_");
          	secondWholeNumber=Integer.parseInt(separatedOperand2[0]);
@@ -145,9 +145,8 @@ public class FracCalc {
     	return(toDivideNumerator + "/" + toDivideDenominator);
     }
     
-   
     
-    
+    // TODO:Implement this function to produce the solution to the input
     
     // TODO: Fill in the space below with any helper methods that you think you will need
     public static String toImproperFrac(int wholenum, int numerator, int denominator) {

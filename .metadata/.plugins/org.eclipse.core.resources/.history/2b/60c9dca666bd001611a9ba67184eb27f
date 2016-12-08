@@ -34,12 +34,12 @@ public class FracCalc {
     //Finally it returns a string that describes each component of the second operator.
     //Part 3:
     public static String produceAnswer(String expression) {
-    	String[] splitExpression=expression.split(" ");
-    	String firstOperand=splitExpression[0];
-    	String operator=splitExpression[1];
-    	String secondOperand=splitExpression[2];
+    	String[] splitString=expression.split(" ");
+    	String firstOperand=splitString[0];
+    	String secondOperand=splitString[2];
     	parseOperand(firstOperand);
     	parseOperand(secondOperand);
+    	String operator=splitString[1];
     	String calculation = "";
     	if(operator.equals("+")){
     		calculation=addFrac(parseOperand(firstOperand), parseOperand(secondOperand));
