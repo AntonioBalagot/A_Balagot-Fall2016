@@ -23,10 +23,19 @@ public class FracCalc {
     	userInput.close();
     }
 
+    // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
+    // This function takes a String 'input' and produces the result
+    //
+    // input is a fraction string that needs to be evaluated.  For your program, this will be the user input.
+    //      e.g. input ==> "1/2 + 3/4"
+    //        
+    // The function should return the result of the fraction after it has been calculated
+    //      e.g. return ==> "1_1/4"
+    
     // Parts 1 & 2: produceAnswer takes a String and splits into two operands and the operator. 
     //Then it parses each operand into a whole number, numerator, and denominator.
     //Finally it returns a string that describes each component of the second operator.
-    //Part 3: produceAnswer calls methods to perform the calculation
+    //Part 3:
     public static String produceAnswer(String expression) {
     	//splitUpParts contains split up parts such as numerators and denominators
     	//Split at spaces to get 2 operands and an operator
@@ -34,6 +43,7 @@ public class FracCalc {
     	String firstOperand=splitUpParts[0];
     	String operator=splitUpParts[1];
     	String secondOperand=splitUpParts[2];
+    	
     	parseOperand(firstOperand);
     	parseOperand(secondOperand);
     	String calculation = "";
@@ -81,64 +91,62 @@ public class FracCalc {
     	
     // If operator is "+" or "-"     	
     public static int[] addOrSubtractFrac(int[] firstOperand , int[]secondOperand, String operator){
-    	int[] fraction = new int[2];
-    	//fraction[0] is the numerator
-    	fraction[0]=0;
-    	//fraction[1] is the denominator
-    	fraction[1]=1;
+    	int[] a = new int[2];
+    	a[0]=0;
+    	a[1]=1;
     	if(operator.equals("-")){
     		secondOperand[0] *= -1;
     	}
     	if(firstOperand[1] == secondOperand[1]){
-    		fraction[0]=firstOperand[0] + secondOperand[0];
-    		fraction[1]=firstOperand[1];
+    		a[0]=firstOperand[0] + secondOperand[0];
+    		a[1]=firstOperand[1];
     	}else{
-    		fraction[0]=(firstOperand[0] * secondOperand[1]) + (secondOperand[0] * firstOperand[1]);
-    		fraction[1]=firstOperand[1]*secondOperand[1];
+    		a[0]=(firstOperand[0] * secondOperand[1]) + (secondOperand[0] * firstOperand[1]);
+    		a[1]=firstOperand[1]*secondOperand[1];
     	}
-    	return(fraction);
+    	return(a);
     }
     	
     //If operator is "*"
     public static int[] multiplyFrac(int[] firstOperand , int[] secondOperand){
-    	int[] fraction=new int[2];
-    	fraction[0]=0;
-    	fraction[1]=1;
-    	fraction[0]=firstOperand[0]*secondOperand[0];
-    	fraction[1]=firstOperand[1]*secondOperand[1];
-    	return(fraction);
+    	int[] a=new int[2];
+    	a[0]=0;
+    	a[1]=1;
+    	a[0]=firstOperand[0]*secondOperand[0];
+    	a[1]=firstOperand[1]*secondOperand[1];
+    	return(a);
     }
     
     //If operator is "/"
     public static int[] divideFrac(int[] firstOperand , int[] secondOperand){
-    	int[] fraction=new int[2];
-    	fraction[0]=0;
-    	fraction[1]=1;
-    	fraction[0]=firstOperand[0]*secondOperand[1];
-    	fraction[1]=firstOperand[1]*secondOperand[0];
-    	if(fraction[0]>=0 && fraction[1]<0){
-    		fraction[0] *=-1;
-    		fraction[1] *=-1;
+    	int[] a=new int[2];
+    	a[0]=0;
+    	a[1]=1;
+    	a[0]=firstOperand[0]*secondOperand[1];
+    	a[1]=firstOperand[1]*secondOperand[0];
+    	if(a[0]>=0 && a[1]<0){
+    		a[0] *=-1;
+    		a[1] *=-1;
     	}
-    	return(fraction);
+    	return(a);
     }
     
     //To simplify the fraction as much as possible (Final)
-    public static String simplify(int[] fraction){
+    public static String simplify(int[] a){
     	int wholeNum=0;
     	int numerator=0;
     	int denominator=1;
     	
-    	if(absValue(fraction[0])>absValue(fraction[1])){
-    		wholeNum=fraction[0]/fraction[1];
-    		numerator=fraction[0]%fraction[1];
-    		denominator=fraction[1];
+    	if(absValue(a[0])>absValue(a[1])){
+    		wholeNum=a[0]/a[1];
+    		numerator=a[0]%a[1];
+    		denominator=a[1];
     	}
-    	if(absValue(fraction[0])<absValue(fraction[1])){
-    		numerator=fraction[0];
-    		denominator=fraction[1];
+    	if(absValue(a[0])<absValue(a[1])){
+    		numerator=a[0];
+    		denominator=a[1];
     	}
-    	if(fraction[0]==fraction[1]){
+    	if(a[0]==a[1]){
     		wholeNum=1;
     	}
     	
@@ -168,8 +176,6 @@ public class FracCalc {
     
     
     // HELPER METHODS
-    
-    //To convert mixed numbers into improper fractions in order to ake it easier to multiply
     public static int[] toImproperFrac(int[] separatedOperand) {
   		//Array to store the parts of an improper fraction
     	int[]separatedImproper=new int[2];
@@ -184,8 +190,19 @@ public class FracCalc {
   		}
   		return(separatedImproper);
   		}
+  		      
+      public static boolean isDivisibleBy(int number1, int number2) {
+    	//Determines if one integer is divisible by another in order to simplify the fraction
+  		if (number1 < number2) {
+  			throw new IllegalArgumentException("number1 must be greater than number2");
+  		}
+  		if(number1 % number2 == 0){
+  		return true;
+  		}else{
+  			return false;
+  		}
+  	  }
       
-    //To deal with negative numbers in the user's input
       public static int absValue(int number) {
   		if(number > 0){;
   		return number;
@@ -194,7 +211,6 @@ public class FracCalc {
   		}
   	  }
       
-      //To find the greatest common factor in the fraction in order to simplify it
       public static int gcf(int num1, int num2) {
   		if(num1 < 0 || num2 < 0) {
   			return gcf(absValue(num1), absValue(num2));
