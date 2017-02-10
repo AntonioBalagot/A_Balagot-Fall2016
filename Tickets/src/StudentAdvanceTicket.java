@@ -1,13 +1,11 @@
-	public class StudentAdvanceTicket extends AdvanceTicket{
-		private double price;
-		public StudentAdvanceTicket(int daysBefore){
-			daysBefore=super.daysInAdvance;
+public class StudentAdvanceTicket extends AdvanceTicket{
+	public StudentAdvanceTicket(int ticketNumber, int daysBefore){
+		super(ticketNumber, daysBefore);
+		super.setPrice(25.0);
+		if(daysBefore >= 10){
+			super.setPrice(15.0);
+		}else{
+			super.setPrice(20.0);
 		}
-		public String toString(){
-			return super.toString();
-		}
-		public double getPrice(){
-			price=(super.getPrice())/2;
-			return price;
-		}
+	}
 }

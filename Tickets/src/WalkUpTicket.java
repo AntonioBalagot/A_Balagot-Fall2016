@@ -1,6 +1,6 @@
 public class WalkUpTicket extends Ticket{
-	public double getPrice(){
-		price = super.price;
+	public WalkUpTicket(int ticketNumber){
+		super(ticketNumber);
+		super.setPrice(50);
 	}
-
 }
