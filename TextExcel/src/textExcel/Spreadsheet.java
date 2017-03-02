@@ -2,8 +2,8 @@ package textExcel;
 
 // Update this file with your own code.
 
-public class Spreadsheet implements Grid
-{
+public class Spreadsheet implements Grid{
+	EmptyCell[][] cells = new EmptyCell[20][12];
 
 	@Override
 	public String processCommand(String command)
