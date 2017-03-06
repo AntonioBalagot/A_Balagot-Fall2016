@@ -1,21 +1,20 @@
 package textExcel;
+import java.util.Scanner;
 
-//Update this file with your own code.
-
-public class SpreadsheetLocation implements Location
-{
+public class SpreadsheetLocation implements Location{
+	
     @Override
-    public int getRow()
-    {
-        // TODO Auto-generated method stub
-        return 0;
+    public int getRow(){
+       Scanner row = new Scanner(System.in);
+       int whichRow=row.nextInt();
+        return whichRow;
     }
 
     @Override
-    public int getCol()
-    {
-        // TODO Auto-generated method stub
-        return 0;
+    public int getCol(){
+    	Scanner column = new Scanner(System.in);
+    	int whichColumn=column.nextInt();   
+        return whichColumn;
     }
     
     public SpreadsheetLocation(String cellName)

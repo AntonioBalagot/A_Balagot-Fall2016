@@ -3,12 +3,15 @@ package textExcel;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-// Update this file with your own code.
-
 public class TextExcel{
-	Scanner userInput = new Scanner(System.in);
 	public static void main(String[] args){
-		for(int i=0 ; i<)
-	    // Add your command loop here
+		Scanner userInput = new Scanner(System.in);
+		String userCommand = userInput.nextLine();
+		Spreadsheet spreadsheet = new Spreadsheet();
+		System.out.println(spreadsheet.getGridText());
+		while(!userCommand.equals("quit")){
+			userCommand=userInput.nextLine();
+			spreadsheet.processCommand(userCommand);
+		}
 	}
 }
