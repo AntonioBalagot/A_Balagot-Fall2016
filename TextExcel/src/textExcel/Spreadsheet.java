@@ -32,7 +32,7 @@ public class Spreadsheet implements Grid{
 			if(i==0){
 				printSpreadsheet = printSpreadsheet + "   ";
 				for(int j=0; j<cells[0].length; j++){
-					printSpreadsheet = printSpreadsheet + ("|" + (char)(j+65) + "")
+					printSpreadsheet = printSpreadsheet + ("|" + (char)(j+65) + "");
 				}
 			}
 		}
