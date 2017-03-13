@@ -13,5 +13,10 @@ public class TextExcel{
 			userCommand=userInput.nextLine();
 			spreadsheet.processCommand(userCommand);
 		}
+		TestsALL.Helper th = new TestsALL.Helper();
+
+        System.out.println(th.getText());
+		spreadsheet.getGridText();
+		userInput.close();
 	}
 }
