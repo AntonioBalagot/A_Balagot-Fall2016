@@ -10,7 +10,6 @@ public class Spreadsheet implements Grid{
 	public String processCommand(String command){
 		return "";
 	}
-
 	@Override
 	public int getRows(){
 		return 20;
@@ -28,15 +27,30 @@ public class Spreadsheet implements Grid{
 
 	@Override
 	public String getGridText(){
-		for(int i=0; i< cells.length; i++){
-			if(i==0){
-				printSpreadsheet = printSpreadsheet + "   ";
-				for(int j=0; j<cells[0].length; j++){
-					printSpreadsheet = printSpreadsheet + ("|" + (char)(j+65) + "");
-				}
-			}
+		String spreadsheet = "";
+		String rows = "";
+		//Adds the number for each row
+		String numberRows = "";
+		//Adds the letter for each column
+		String addLetters = "  |";
+		for(int i=0; i < 12; i++){
+			addLetters = addLetters + ((char) ('A' + i)) + "         |";
 		}
-		return null;
+		spreadsheet = spreadsheet + addLetters + "\n";
+		for(int i = 0; i<20;i++){
+			//To get equal spacing for the labels
+			if (i<9){
+				rows = (i+1) + "  |";
+			}else{
+				rows = (i+1) + " |";
+			}
+			for(int k = 0; k < cells.length; k++){
+				rows = rows + "         |";
+			}
+			numberRows = "\n";
+			spreadsheet = spreadsheet + rows + numberRows;
+		}
+		return spreadsheet;
 	}
 
 }
