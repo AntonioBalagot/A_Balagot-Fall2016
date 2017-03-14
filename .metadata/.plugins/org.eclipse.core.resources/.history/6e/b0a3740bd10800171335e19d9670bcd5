@@ -4,10 +4,7 @@ package textExcel;
 
 public class Spreadsheet implements Grid{
 	Cell[][] cells = new EmptyCell[20][12];
-	public Spreadsheet(){
-		for()
-		
-	}
+	String printSpreadsheet="";
 
 	@Override
 	public String processCommand(String command){
