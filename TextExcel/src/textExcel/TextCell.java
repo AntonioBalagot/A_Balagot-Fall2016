@@ -1,25 +1,20 @@
 package textExcel;
 
 public class TextCell implements Cell {
-	String text;
-	public TextCell(){}
-	//textCell = the text put in a cell
-	public void setText(String textCell){
-		textCell = text;
+	private String text;
+	public TextCell(String insertText){
+	//insertText = the text put into its cell
+		text = insertText;
 	}
 
 	@Override
 	public String abbreviatedCellText() {
-		String text = "";
-		setText(text);
-		return (text + "         ").substring(0,9);
+		return text + "          ".substring(0,10);
 	}
 
 	@Override
 	public String fullCellText() {
-		String textCell = "";
-		setText(textCell);
-		return textCell;
+		return "\"" + text + "\"";
 	}
 
 }

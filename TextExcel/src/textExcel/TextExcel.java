@@ -13,7 +13,6 @@ public class TextExcel{
 			userCommand=userInput.nextLine();
 			spreadsheet.processCommand(userCommand);
 		}
-		spreadsheet.getGridText();
 		userInput.close();
 	}
 }
