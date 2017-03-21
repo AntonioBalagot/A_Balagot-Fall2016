@@ -12,7 +12,7 @@ public class RealCell implements Cell {
 
 	@Override
 	public String abbreviatedCellText() {
-		return (num + "                   ").substring(0,10);
+		return (num + "          ").substring(0,10);
 	}
 
 	@Override
