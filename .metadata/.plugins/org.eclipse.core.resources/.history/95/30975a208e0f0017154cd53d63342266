@@ -79,14 +79,14 @@ public class Spreadsheet implements Grid{
 			letter+= 1;
 		}
 		spreadsheet = spreadsheet + "\n";
-		for(int i = 0; i<20;i++){
+		for(int i = 0; i<12;i++){
 			//To get equal spacing for the labels
 			if (i<9){
 				spreadsheet = (i+1) + "  |";
 			}else{
 				spreadsheet = (i+1) + " |";
 			}
-			for(int j = 0; j < 12; j++){
+			for(int j = 0; j < 20; j++){
 				spreadsheet += cells[i][j].abbreviatedCellText() + "|";
 			}
 			spreadsheet += "\n";

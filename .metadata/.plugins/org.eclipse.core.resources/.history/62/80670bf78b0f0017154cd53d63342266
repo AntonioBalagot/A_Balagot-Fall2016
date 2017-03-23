@@ -32,7 +32,8 @@ public class Spreadsheet implements Grid{
 						cells[row][column] = new PercentCell(input[2]);
 					} else
 						cells[row][column] = new ValueCell(input[2]);
-				}else if (input[0].equalsIgnoreCase("clear")){
+				}
+				else if (input[0].equalsIgnoreCase("clear")){
 					SpreadsheetLocation location = new SpreadsheetLocation(input[1]);
 					cells[location.getRow()][location.getCol()] = new EmptyCell();
 					return (getGridText());
@@ -53,8 +54,6 @@ public class Spreadsheet implements Grid{
 		} 
 		return "";
 	}
-		
-		
 	@Override
 	public int getRows(){
 		return 20;

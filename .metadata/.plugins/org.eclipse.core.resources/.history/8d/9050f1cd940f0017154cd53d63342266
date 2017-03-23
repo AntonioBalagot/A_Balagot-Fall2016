@@ -74,11 +74,6 @@ public class Spreadsheet implements Grid{
 	public String getGridText(){
 		String spreadsheet = "   |";
 		char letter = 'A';
-		for(int i=0; i < 12; i++){
-			spreadsheet = spreadsheet + ((char)(letter)) + "         |";
-			letter+= 1;
-		}
-		spreadsheet = spreadsheet + "\n";
 		for(int i = 0; i<20;i++){
 			//To get equal spacing for the labels
 			if (i<9){
@@ -90,6 +85,12 @@ public class Spreadsheet implements Grid{
 				spreadsheet += cells[i][j].abbreviatedCellText() + "|";
 			}
 			spreadsheet += "\n";
+		for(int j=0; j < 12; j++){
+			spreadsheet = spreadsheet + ((char)(letter)) + "         |";
+			letter+= 1;
+		}
+		spreadsheet = spreadsheet + "\n";
+		
 		}
 		return spreadsheet;
 	}
