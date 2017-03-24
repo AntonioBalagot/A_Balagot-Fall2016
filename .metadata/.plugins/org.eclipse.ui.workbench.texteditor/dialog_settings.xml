@@ -2,21 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="isD" key="selection"/>
+		<item value="process" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="process"/>
+			<item value="(getgridtext())"/>
+			<item value="processcommand"/>
 			<item value="isD"/>
 			<item value="a["/>
 			<item value="Mixed"/>
 			<item value="mixed"/>
 			<item value="void"/>
-			<item value="single"/>
-			<item value="["/>
 		</list>
 		<list key="replacehistory">
+			<item value="getGridText()"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
