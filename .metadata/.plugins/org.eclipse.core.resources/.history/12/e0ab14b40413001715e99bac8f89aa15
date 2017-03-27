@@ -18,10 +18,11 @@ public class Spreadsheet implements Grid{
 	public String processCommand(String command){
 		if(command.indexOf(" ") > 0){
 			String[] input = command.split(" ", 3);
-			if (input.equals("")) {
-				return "";
-			} else if (input.length > 1){
-				if(input[1].equals("=")){
+			if(input.length > 1){
+				if(input[1].equals("")){
+					return "";
+				}
+				else if(input[1].equals("=")){
 					String cellLocation = input[0];
 					SpreadsheetLocation location = new SpreadsheetLocation(cellLocation);
 					int column = location.getCol();

@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&quot;"/>
 			<item value="process"/>
 			<item value="(getgridtext())"/>
 			<item value="processcommand"/>
@@ -15,7 +16,6 @@
 			<item value="a["/>
 			<item value="Mixed"/>
 			<item value="mixed"/>
-			<item value="void"/>
 		</list>
 		<list key="replacehistory">
 			<item value="getGridText()"/>

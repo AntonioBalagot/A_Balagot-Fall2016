@@ -19,6 +19,9 @@ public class Spreadsheet implements Grid{
 		if(command.indexOf(" ") > 0){
 			String[] input = command.split(" ", 3);
 			if(input.length > 1){
+				if(input[1].equals("")){
+					return "";
+				}
 				if(input[1].equals("=")){
 					String cellLocation = input[0];
 					SpreadsheetLocation location = new SpreadsheetLocation(cellLocation);
@@ -32,28 +35,29 @@ public class Spreadsheet implements Grid{
 						cells[row][column] = new PercentCell(input[2]);
 					} else
 						cells[row][column] = new ValueCell(input[2]);
-				}
-				else if (input[0].equalsIgnoreCase("clear")){
+				}else if (input[0].equalsIgnoreCase("clear")){
 					SpreadsheetLocation location = new SpreadsheetLocation(input[1]);
 					cells[location.getRow()][location.getCol()] = new EmptyCell();
-					return (getGridText());
+					return getGridText();
 				}
 			}
-		return (getGridText());
-		}else if(command.equalsIgnoreCase("clear")){
+		return getGridText();
+		} else if (command.equalsIgnoreCase("clear")){
 			for( int i = 0; i < cells.length; i++){
 				for (int j = 0; j < cells[i].length; j++){
 					cells[i][j] = new EmptyCell();
 				}
 			}
-			return (getGridText());
+			return getGridText();
 		}
 		else if(command.length() < 5){
 			SpreadsheetLocation location = new SpreadsheetLocation(command);
 			return (getCell(location).fullCellText());
 		} 
-		return "";
+		return getGridText();
 	}
+		
+		
 	@Override
 	public int getRows(){
 		return 20;
@@ -75,15 +79,15 @@ public class Spreadsheet implements Grid{
 		char letter = 'A';
 		for(int i=0; i < 12; i++){
 			spreadsheet = spreadsheet + ((char)(letter)) + "         |";
-			letter+= 1;
+			letter++;
 		}
 		spreadsheet = spreadsheet + "\n";
 		for(int i = 0; i<20;i++){
 			//To get equal spacing for the labels
 			if (i<9){
-				spreadsheet = (i+1) + "   |";
+				spreadsheet += (i+1) + "  |";
 			}else{
-				spreadsheet = (i+1) + " |";
+				spreadsheet += (i+1) + " |";
 			}
 			for(int j = 0; j < 12; j++){
 				spreadsheet += cells[i][j].abbreviatedCellText() + "|";
