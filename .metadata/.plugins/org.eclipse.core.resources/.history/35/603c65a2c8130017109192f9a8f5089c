@@ -16,11 +16,11 @@ public class Spreadsheet implements Grid{
 
 	@Override
 	public String processCommand(String command){
-		if (command.equals("")) {
-			return "";
-		}else if(command.indexOf(" ") > 0){
+		if(command.indexOf(" ") > 0){
 			String[] input = command.split(" ", 3);
-			if (input.length > 1){
+			if (input.equals("")) {
+				return "";
+			} else if (input.length > 1){
 				if(input[1].equals("=")){
 					String cellLocation = input[0];
 					SpreadsheetLocation location = new SpreadsheetLocation(cellLocation);
