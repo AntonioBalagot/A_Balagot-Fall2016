@@ -8,10 +8,10 @@ public class FormulaCell extends RealCell {
 	}
 	
 	public double getDoubleValue(){
-		String[] split = formula.split(" ");
 		int operator = 2;
+		String[] split = formula.split(" ");
 		double result = Double.parseDouble(split[1]);
-		for(int i = 1; i<split.length -1; i+=2){
+		for(int i = 1; i<split.length-1; i+=2){
 			if(operator < split.length){
 				if(split[operator].equals(("+"))){
 					double operand = Double.parseDouble(split[i+2]);

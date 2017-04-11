@@ -4,7 +4,11 @@ public class ValueCell extends RealCell {
 	public ValueCell(String input){
 		super(input);
 	}
-	
+	public double getDoubleValue(){
+		String value = getNum();
+		double number = Double.parseDouble(value);
+		return number;
+	}
 	public String abbreviatedCellText(){
 		String value = getNum();
 		double decimal = Double.parseDouble(value);
@@ -17,9 +21,5 @@ public class ValueCell extends RealCell {
 	public String fullCellText(){
 		return super.fullCellText();
 	}
-	public double getDoubleValue(){
-		String value = getNum();
-		double number = Double.parseDouble(value);
-		return number;
-	}
+	
 }

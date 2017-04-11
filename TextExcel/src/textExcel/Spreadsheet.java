@@ -82,7 +82,6 @@ public class Spreadsheet implements Grid{
 		}
 		spreadsheet = spreadsheet + "\n";
 		for(int i = 0; i<20;i++){
-			//To get equal spacing for the labels
 			if (i<9){
 				spreadsheet += (i+1) + "  |";
 			}else{

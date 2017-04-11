@@ -4,8 +4,11 @@ public class PercentCell extends RealCell {
 	public PercentCell(String percent){
 		super(percent);
 	}
-	
-	
+	public double getDoubleValue(){
+		String num = getNum();
+		double percent = Double.parseDouble(num.substring(0,num.length()-1));
+		return percent/100;
+	}
 	public String abbreviatedCellText() {
 		String num = getNum();
 		if (num.indexOf(".") != -1){
@@ -13,15 +16,9 @@ public class PercentCell extends RealCell {
 		}
 		return num.substring(0,10);
 	}
-	
-	
 	public String fullCellText() {
 		return getDoubleValue() + "";
 	}
-	public double getDoubleValue(){
-		String num = getNum();
-		double percent = Double.parseDouble(num.substring(0,num.length()-1));
-		return percent/100;
-	}
+	
 
 }
